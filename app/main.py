@@ -1,14 +1,9 @@
-from typing import Any
-
-
 class Car:
     def __init__(self, comfort_class: int, clean_mark: int,
                  brand: str) -> None:
         self.comfort_class = comfort_class
         self.clean_mark = clean_mark
         self.brand = brand
-
-    pass
 
 
 class CarWashStation:
@@ -35,11 +30,11 @@ class CarWashStation:
         )
         return round(price, 1)
 
-    def wash_single_car(self, car: Car) -> Any:
+    def wash_single_car(self, car: Car) -> None:
         if self.clean_power > car.clean_mark:
             car.clean_mark = self.clean_power
 
-    def rate_service(self, rate: int) -> Any:
+    def rate_service(self, rate: int) -> None:
         total_score = self.average_rating * self.count_of_ratings
         total_score += rate
         self.count_of_ratings += 1
